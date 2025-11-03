@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="google-site-verification" content="SkK7Cq0Zx6X9BznlkNU6UPeQats_1Z82opKeP2vrJv0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carros: Mundo Automotriz</title>
+  <meta name="description" content="Página sobre carros: modelos, características y galería. Proyecto para GitHub Pages." />
+
+  <!-- Estilos internos para no depender de archivos externos -->
+  <style>
+    :root{
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --accent: #1f8ef1;
+      --text: #222;
+      --muted: #666;
+      --radius: 12px;
+      --gap: 20px;
+    }
+
+    *{box-sizing: border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f7fafc 0%, var(--bg) 100%);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Contenedor general */
+    .container{
+      max-width:1100px;
+      margin:32px auto;
+      padding:24px;
+      gap:var(--gap);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .logo{
+      width:70px;
+      height:70px;
+      border-radius:12px;
+      background: linear-gradient(135deg,#111827,#1f2937);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: #fff;
+      font-weight:700;
+      font-size:22px;
+      box-shadow: 0 6px 18px rgba(31,142,241,0.12);
+    }
+
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      margin-left:14px;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+
+    main{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr 340px;
+      gap:24px;
+    }
+
+    /* Tarjetas y secciones */
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      box-shadow:0 6px 20px rgba(15,23,42,0.06);
+    }
+
+    .hero{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+
+    .hero img{
+      width:220px;
+      border-radius:10px;
+      object-fit:cover;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+    }
+
+    .models{
+      display:grid;
+      gap:14px;
+      margin-top:12px;
+    }
+
+    .model{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:12px;
+      border-radius:10px;
+      background: linear-gradient(180deg,#ffffff,#fbfdff);
+    }
+    .model img{width:110px;height:70px;object-fit:cover;border-radius:8px}
+
+    .specs{
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    aside .card + .card{margin-top:16px}
+
+    /* Galería simple */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:10px;
+      margin-top:12px;
+    }
+    .gallery img{
+      width:100%;
+      height:90px;
+      object-fit:cover;
+      border-radius:8px;
+      display:block;
+    }
+
+    footer{
+      margin-top:28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      main{grid-template-columns:1fr;}
+      .hero img{width:160px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media (max-width:480px){
+      .logo{width:56px;height:56px;font-size:18px}
+      .gallery img{height:70px}
+    }
+
+    /* Botón simple */
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow: 0 8px 20px rgba(31,142,241,0.15);
+    }
+
+    /* Small heading */
+    h3{margin:0 0 8px 0;font-size:1.05rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">C▮R</div>
+        <div>
+          <h1>Mundo Carros</h1>
+          <p class="lead">Todo sobre modelos, características y curiosidades del mundo automotriz.</p>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <a href="#modelos">Modelos</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Sección principal -->
+      <section class="card">
+        <div class="hero">
+          <!-- Imagen de portada: puedes reemplazar la URL por una imagen propia en tu repo -->
+          <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=60" alt="Carro deportivo" />
+          <div>
+            <h2>Bienvenido a Mundo Carros</h2>
+            <p class="lead">Explora reseñas breves de modelos populares, sus características y una galería con diseños llamativos. Ideal para una tarea escolar sobre tecnología automotriz.</p>
+
+            <p style="margin-top:10px;">
+              <a class="btn" href="#modelos">Ver modelos</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Modelos destacados -->
+        <div id="modelos" style="margin-top:18px">
+          <h3>Modelos destacados</h3>
+
+          <div class="models">
+            <!-- Modelo 1 -->
+            <article class="model" aria-labelledby="m1">
+              <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=600&q=60" alt="Toyota Supra"/>
+              <div>
+                <strong id="m1">Toyota Supra (Ejemplo)</strong>
+                <div class="specs">
+                  Motor: 3.0L turbo — Potencia: 335 hp — 0-100 km/h: aprox. 4.1 s
+                </div>
+                <p style="margin:8px 0 0;font-size:0.92rem;color:var(--muted)">Coupé deportivo orientado al rendimiento, con diseño agresivo y buena ergonomía para conducción deportiva.</p>
+              </div>
+            </article>
+
+            <!-- Modelo 2 -->
+            <article class="model" aria-labelledby="m2">
+              <img src="https://images.unsplash.com/photo-1542362567-ba5e2f66f9f2?auto=format&fit=crop&w=600&q=60" alt="Tesla Model 3"/>
+              <div>
+                <strong id="m2">Tesla Model 3 (Ejemplo)</strong>
+                <div class="specs">
+                  Motor: Eléctrico — Autonomía: ~500 km — 0-100 km/h: desde 3.3 s (Performance)
+                </div>
+                <p style="margin:8px 0 0;font-size:0.92rem;color:var(--muted)">Sedán eléctrico con enfoque en tecnología: piloto automático, actualizaciones OTA y gran eficiencia.</p>
+              </div>
+            </article>
+
+            <!-- Modelo 3 -->
+            <article class="model" aria-labelledby="m3">
+              <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=60" alt="Ford F-150"/>
+              <div>
+                <strong id="m3">Ford F-150 (Ejemplo)</strong>
+                <div class="specs">
+                  Tipos: Camioneta pickup — Motores: V6/V8/Eléctrico — Uso: trabajo y todoterreno
+                </div>
+                <p style="margin:8px 0 0;font-size:0.92rem;color:var(--muted)">Una pickup versátil, ícono en mercados como Estados Unidos, con versiones para trabajo o lujo.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Más contenido: características -->
+        <div style="margin-top:18px">
+          <h3>¿Qué tener en cuenta al elegir un carro?</h3>
+          <ul style="color:var(--muted);padding-left:18px;margin-top:8px">
+            <li>Consumo de combustible / autonomía (en coches eléctricos).</li>
+            <li>Seguridad: airbags, ABS, control de estabilidad.</li>
+            <li>Mantenimiento y costo de repuestos.</li>
+            <li>Uso: ciudad, carretera, trabajo o deporte.</li>
+            <li>Presupuesto y seguro.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Barra lateral -->
+      <aside>
+        <div class="card">
+          <h3>Galería rápida</h3>
+          <div id="galeria" class="gallery" aria-label="Galería de carros">
+            <!-- Imágenes de ejemplo (reemplázalas por tus propias imágenes subidas al repo si quieres) -->
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60" alt="Carro 1">
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=60" alt="Carro 2">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=60" alt="Carro 3">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=60" alt="Carro 4">
+            <img src="https://images.unsplash.com/photo-1542362567-ba5e2f66f9f2?auto=format&fit=crop&w=800&q=60" alt="Carro 5">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60" alt="Carro 6">
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Datos rápidos</h3>
+          <p style="color:var(--muted);margin:0">Año: 2025 · Autor: Xiomara · Tema: Carros</p>
+          <p style="margin-top:10px">
+            <a class="btn" href="#contacto">Contáctame</a>
+          </p>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Créditos</h3>
+          <p style="color:var(--muted);margin:0">Imágenes de ejemplo: Unsplash (licencia libre). Reemplaza con tus imágenes en el repositorio si lo prefieres.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer id="contacto">
+      <div class="card" style="display:inline-block;max-width:900px">
+        <h3>Contacto</h3>
+        <p style="color:var(--muted);margin-top:6px">Si quieres, añade aquí tu correo o redes. Para la tarea puedes dejar: <strong>Estudiante: Xiomara</strong></p>
+        <p style="margin-top:10px;color:var(--muted)">© 2025 Mundo Carros — Proyecto escolar</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Pequeño script (opcional) para mejorar experiencia -->
+  <script>
+    // Script opcional: por ejemplo podrías agregar interactividad.
+    // Actualmente no hace nada porque la tarea probablemente solo pide HTML/CSS.
+    // Si quieres que agregue un botón de modo oscuro o carrusel, lo incorporo.
+  </script>
+</body>
+</html>
